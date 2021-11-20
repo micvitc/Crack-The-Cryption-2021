@@ -6,10 +6,9 @@ app.set('view engine', 'ejs')
 
 app.get("/", (req, res) => {
   if (isbot(req.get('user-agent'))) {
-    res.render('./bot.ejs')
-    return
+    return res.render('./bot.ejs')
   }
-  res.render("./index.ejs")
+  return res.render("./index.ejs")
 });
 
 app.listen(8000);
